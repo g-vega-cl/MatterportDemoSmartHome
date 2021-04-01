@@ -22,7 +22,7 @@ const Slot_1_items: ItemDesc[] = [
     url: 'ON',
     categories: [ Category.Light_1 ],
     position: new Vector3(0, -0.5, 0),
-    rotation: new Vector3(0, 90, 0),
+    rotation: new Vector3(0, 0, 0),
     scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
   {

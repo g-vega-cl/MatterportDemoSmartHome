@@ -70,7 +70,7 @@ class LoadingIndicator extends SceneComponent {
         break;
       case 'Loading':
         {
-          this.inputs.logo.visible = true;
+          this.inputs.logo.visible = false;
 
           const yAxis = new THREE.Vector3(0, 1, 0);
           const frame0 = new THREE.Quaternion().setFromAxisAngle(yAxis, 0);
