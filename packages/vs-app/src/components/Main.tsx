@@ -130,9 +130,6 @@ export class Main extends Component<Props, State> {
 
     this.slots = slots;
     await this.scene.load('AAWs9eZ9ip6', findSlots);
-
-    console.log(this.scene);
-    console.log(this.sdk);
   }
 
   private handleListSelection(item: ItemDesc) {
@@ -181,6 +178,7 @@ export class Main extends Component<Props, State> {
                 slot.boxComponent.inputs.opacity = SelectedOpacity;
                 slot.boxComponent.inputs.lineOpacity = SelectedLineOpacity;
                 this.cameraInput.inputs.focus = node.position;
+                console.log("Position of camaraInput node in handleOrientedBoxInteraction ",node.position);
               }
             }
           }
