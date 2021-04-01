@@ -269,14 +269,14 @@
       },
       {
         "name": "slot_6",
-        "position": { "x": -6.1, "y": 2.5, "z": 4},
+        "position": { "x": -7, "y": 2.5, "z": 3},
         "rotation": { "x": 0, "y": 0,"z": 0 },
         "scale": { "x": 1, "y": 1,"z": 1 },
         "components": [
           {
             "type": "mp.slot",
             "inputs": {
-              "size": { "x":3, "y": 0.2, "z": 5 }
+              "size": { "x":2.5, "y": 0.2, "z": 2.5 }
             }
           },
           {

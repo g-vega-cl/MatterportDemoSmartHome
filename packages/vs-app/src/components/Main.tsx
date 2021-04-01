@@ -134,9 +134,11 @@ export class Main extends Component<Props, State> {
 
   private handleListSelection(item: ItemDesc) {
     const slotNode = this.state.slotNode;
+    console.log("I CLICKED A LIST ITEM. SlotNode 1: ", slotNode)
     if (!slotNode) {
       return;
     }
+    console.log("I CLICKED A LIST ITEM. SlotNode 2: ", slotNode)
     slotNode.slotComponent.inputs. model = item.url;
     slotNode.modelComponent.inputs.localPosition.x = item.position.x;
     slotNode.modelComponent.inputs.localPosition.y = item.position.y;
@@ -153,6 +155,7 @@ export class Main extends Component<Props, State> {
     if (interactionType === ComponentInteractionType.CLICK) {
       // select this node
       for (const slot of this.slots) {
+        console.log("SLOT ", slot)
         if (slot.node === node) {
           for (const componentSearch of node.componentIterator()) {
             if (componentSearch === component) {

@@ -38,7 +38,7 @@ export class ItemList extends Component<Props,{}> {
           {this.props.items.map((item: ItemDesc, index: number) => {
             return (
               <ListItem className= 'list-item' button key={index} onClick={this.onClick}>
-                <ListItemText primary={item.name} onClick={this.onClick}/>
+                <p>sadasdas</p><ListItemText primary={item.name} onClick={this.onClick}/>
               </ListItem>
             );
           })}
