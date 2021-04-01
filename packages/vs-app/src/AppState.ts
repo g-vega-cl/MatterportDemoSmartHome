@@ -1,6 +1,5 @@
 import { ItemDesc, Category } from "./types";
 import { Vector3} from "three";
-import { cdnUrl } from "@mp/common";
 
 export class AppState {
   sid: string = '';
@@ -10,209 +9,131 @@ export class AppState {
 
 
 export const slots: Map<string, Category> = new Map();
-slots.set('slot_1', Category.Sofa);
-slots.set('slot_2', Category.EndTable);
-slots.set('slot_3', Category.ArmChair);
-slots.set('slot_4', Category.CoffeTable);
+slots.set('slot_1', Category.Light_1);
+slots.set('slot_2', Category.Light_2);
+slots.set('slot_3', Category.Light_3);
+slots.set('slot_4', Category.Light_4);
+slots.set('slot_5', Category.Light_5);
+slots.set('slot_6', Category.Light_6);
 
-const sofaItems: ItemDesc[] = [
+const Slot_1_items: ItemDesc[] = [
   {
     name: 'ON',
     url: 'ON',
-    categories: [ Category.Sofa ],
+    categories: [ Category.Light_1 ],
     position: new Vector3(0, -0.5, 0),
     rotation: new Vector3(0, 90, 0),
-    scale: new Vector3(0.0, 0.0, 0.0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
   {
     name: 'OFF',
     url: 'OFF',
-    categories: [ Category.Sofa ],
+    categories: [ Category.Light_1 ],
     position: new Vector3(5.2, -0.5, 0),
     rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0, 0, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
 ];
 
-const endTableItems: ItemDesc[] = [
+const Slot_2_items: ItemDesc[] = [
   {
-    name: 'end table 2',
-    url: cdnUrl + '/models/end-table/2/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'Aula',
-    url: cdnUrl + '/models/end-table/3/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'Arwin',
-    url: cdnUrl + '/models/end-table/4/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'Edelweiss',
-    url: cdnUrl + '/models/end-table/5/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'Aula 2',
-    url: cdnUrl + '/models/end-table/6/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'Contrast Chess',
-    url: cdnUrl + '/models/end-table/7/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
+    name: 'ON',
+    url: 'ON',
+    categories: [ Category.Light_2 ],
+    position: new Vector3(0, -0.5, 0),
     rotation: new Vector3(0, 90, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
   {
-    name: 'Global',
-    url: cdnUrl + '/models/end-table/8/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(-0.32, -0.32, -0.5),
+    name: 'OFF',
+    url: 'OFF',
+    categories: [ Category.Light_2 ],
+    position: new Vector3(5.2, -0.5, 0),
     rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.001, 0.001, 0.001),
-  },
-  {
-    name: 'Aula 3',
-    url: cdnUrl + '/models/end-table/9/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.32, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
 ];
 
-const armChairItems: ItemDesc[] = [
+const Slot_3_items: ItemDesc[] = [
   {
-    name: 'arm chair 2',
-    url: cdnUrl + '/models/arm-chair/2/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(-0.27, -0.51, -0.35),
-    rotation: new Vector3(0, -130, 0),
-    scale: new Vector3(0.001, 0.001, 0.001),
-  },
-  {
-    name: 'arm chair 4',
-    url: cdnUrl + '/models/arm-chair/4/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.51, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.008, 0.008, 0.008),
-  },
-  {
-    name: 'arm chair 5',
-    url: cdnUrl + '/models/arm-chair/5/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.51, 0),
-    rotation: new Vector3(0, -90, 0),
-    scale: new Vector3(0.0019, 0.0019, 0.0019),
-  },
-  {
-    name: 'arm chair 6',
-    url: cdnUrl + '/models/arm-chair/6/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.51, 0),
-    rotation: new Vector3(0, -90, 0),
-    scale: new Vector3(1.3, 1.3, 1.3),
-  },
-  {
-    name: 'arm chair 7',
-    url: cdnUrl + '/models/arm-chair/7/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.51, 0),
-    rotation: new Vector3(0, -90, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'arm chair 8',
-    url: cdnUrl + '/models/arm-chair/8/scene.gltf',
-    categories: [ Category.EndTable ],
-    position: new Vector3(0, -0.51, 0),
+    name: 'ON',
+    url: 'ON',
+    categories: [ Category.Light_3 ],
+    position: new Vector3(0, -0.5, 0),
     rotation: new Vector3(0, 90, 0),
-    scale: new Vector3(0.011, 0.011, 0.011),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
+  },
+  {
+    name: 'OFF',
+    url: 'OFF',
+    categories: [ Category.Light_3 ],
+    position: new Vector3(5.2, -0.5, 0),
+    rotation: new Vector3(0, 0, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
 ];
 
-const coffeeTableItems: ItemDesc[] = [
+const Slot_4_items: ItemDesc[] = [
   {
-    name: 'coffee table 1',
-    url: cdnUrl + '/models/coffee-table/2/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(0, 0, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.6, 0.6, 0.6),
-  },
-  {
-    name: 'coffee table 2',
-    url: cdnUrl + '/models/coffee-table/3/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(0, 0, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.4, 0.4, 0.4),
-  },
-  {
-    name: 'coffee table 3',
-    url: cdnUrl + '/models/coffee-table/6/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(-0.15, -0.2, 0.4),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'coffee table 4',
-    url: cdnUrl + '/models/coffee-table/7/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(0, -0.26, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'coffee table 5',
-    url: cdnUrl + '/models/coffee-table/8/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(0, -0.26, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'coffee table 6',
-    url: cdnUrl + '/models/coffee-table/9/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(0, -0.255, 0),
-    rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(0.01, 0.01, 0.01),
-  },
-  {
-    name: 'coffee table 7',
-    url: cdnUrl + '/models/coffee-table/10/scene.gltf',
-    categories: [ Category.CoffeTable ],
-    position: new Vector3(1.3, -0.255, 0.2),
+    name: 'ON',
+    url: 'ON',
+    categories: [ Category.Light_4 ],
+    position: new Vector3(0, -0.5, 0),
     rotation: new Vector3(0, 90, 0),
-    scale: new Vector3(0.2, 0.2, 0.2),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
+  },
+  {
+    name: 'OFF',
+    url: 'OFF',
+    categories: [ Category.Light_4 ],
+    position: new Vector3(5.2, -0.5, 0),
+    rotation: new Vector3(0, 0, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
+  },
+];
+
+const Slot_5_items: ItemDesc[] = [
+  {
+    name: 'ON',
+    url: 'ON',
+    categories: [ Category.Light_5 ],
+    position: new Vector3(0, -0.5, 0),
+    rotation: new Vector3(0, 90, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
+  },
+  {
+    name: 'OFF',
+    url: 'OFF',
+    categories: [ Category.Light_5 ],
+    position: new Vector3(5.2, -0.5, 0),
+    rotation: new Vector3(0, 0, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
+  },
+];
+
+const Slot_6_items: ItemDesc[] = [
+  {
+    name: 'ON',
+    url: 'ON',
+    categories: [ Category.Light_6 ],
+    position: new Vector3(0, -0.5, 0),
+    rotation: new Vector3(0, 90, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
+  },
+  {
+    name: 'OFF',
+    url: 'OFF',
+    categories: [ Category.Light_6 ],
+    position: new Vector3(5.2, -0.5, 0),
+    rotation: new Vector3(0, 0, 0),
+    scale: new Vector3(0.0001, 0.0001, 0.0001),
   },
 ];
 
 export const items: Map<Category, ItemDesc[]> = new Map();
-items.set(Category.Sofa, sofaItems);
-items.set(Category.EndTable, endTableItems);
-items.set(Category.ArmChair, armChairItems);
-items.set(Category.CoffeTable, coffeeTableItems);
+items.set(Category.Light_1, Slot_1_items);
+items.set(Category.Light_2, Slot_2_items);
+items.set(Category.Light_3, Slot_3_items);
+items.set(Category.Light_4, Slot_4_items);
+items.set(Category.Light_5, Slot_5_items);
+items.set(Category.Light_6, Slot_6_items);

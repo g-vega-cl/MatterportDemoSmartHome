@@ -1,10 +1,12 @@
 import { Vector3 } from 'three';
 
 export enum Category {
-  Sofa = 'Sofa',
-  EndTable = 'End Table',
-  ArmChair = 'Arm Chair',
-  CoffeTable = 'Coffee Table',
+  Light_1 = 'Light_1',
+  Light_2 = 'Light_2',
+  Light_3 = 'Light_3',
+  Light_4 = 'Light_4',
+  Light_5 = 'Light_5',
+  Light_6 = 'Light_6',
 }
 
 export type ItemDesc = {

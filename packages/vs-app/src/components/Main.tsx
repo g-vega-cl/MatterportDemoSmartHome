@@ -8,7 +8,7 @@ import { ItemDesc } from 'src/types';
 import { cameraInputType } from '@mp/common/src/sdk-components/Camera';
 import { Vector3, Quaternion, Euler, Matrix4 } from 'three';
 
-const SelectedColor = 0xffff00;
+const SelectedColor = 0xff3158;
 const SelectedOpacity = 0.1;
 const SelectedLineOpacity = 1.0;
 const UnselectedColor = 0xffffff;
