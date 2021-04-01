@@ -18,19 +18,19 @@ slots.set('slot_4', Category.CoffeTable);
 const sofaItems: ItemDesc[] = [
   {
     name: 'ON',
-    url: '',
+    url: 'ON',
     categories: [ Category.Sofa ],
     position: new Vector3(0, -0.5, 0),
     rotation: new Vector3(0, 90, 0),
-    scale: new Vector3(0.009, 0.009, 0.009),
+    scale: new Vector3(0.0, 0.0, 0.0),
   },
   {
     name: 'OFF',
-    url: '',
+    url: 'OFF',
     categories: [ Category.Sofa ],
     position: new Vector3(5.2, -0.5, 0),
     rotation: new Vector3(0, 0, 0),
-    scale: new Vector3(1, 1, 1),
+    scale: new Vector3(0, 0, 0),
   },
 ];
 

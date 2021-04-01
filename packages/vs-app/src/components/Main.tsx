@@ -139,6 +139,14 @@ export class Main extends Component<Props, State> {
       return;
     }
     console.log("I CLICKED A LIST ITEM. SlotNode 2: ", slotNode)
+    console.log("ITEM PASSED TO HANDLELISTSEL: ", item)
+    if(item.name === "ON"){
+      slotNode.boxComponent.inputs.color = 16777029;
+      slotNode.boxComponent.inputs.opacity = 0.23;
+    }
+    if(item.name === "OFF"){
+      slotNode.boxComponent.inputs.color = UnselectedColor;
+    }
     slotNode.slotComponent.inputs. model = item.url;
     slotNode.modelComponent.inputs.localPosition.x = item.position.x;
     slotNode.modelComponent.inputs.localPosition.y = item.position.y;
@@ -161,9 +169,12 @@ export class Main extends Component<Props, State> {
             if (componentSearch === component) {
               const lastSlotNode = this.state.slotNode;
               if (lastSlotNode) {
-                lastSlotNode.boxComponent.inputs.color = UnselectedColor;
-                lastSlotNode.boxComponent.inputs.opacity = UnselectedOpacity;
-                lastSlotNode.boxComponent.inputs.lineOpacity = UnselectedLineOpacity;
+                console.log("Last slot node ", lastSlotNode)
+                if(lastSlotNode.boxComponent.inputs.color !== 16777029){
+                  lastSlotNode.boxComponent.inputs.color = UnselectedColor;
+                  lastSlotNode.boxComponent.inputs.opacity = UnselectedOpacity;
+                  lastSlotNode.boxComponent.inputs.lineOpacity = UnselectedLineOpacity;
+                }
               }
 
               if (lastSlotNode === slot) {

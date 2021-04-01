@@ -18,10 +18,15 @@ export class ItemList extends Component<Props,{}> {
   }
 
   onClick(event: React.MouseEvent) {
+    console.log("CLICKED ITEM LIST 1");
     if (this.props.onSelected) {
+      console.log("this props onselected");
       for (const item of this.props.items) {
+        console.log("item on props.item ", item);
+        console.log("event.currentTarget.textContext: ", event.currentTarget.textContent)
         if (item.name === event.currentTarget.textContent) {
           this.props.onSelected(item);
+          console.log("item.name === event.currentTarget.textContent ", item.name, item);
         }
       }
     }
@@ -38,7 +43,7 @@ export class ItemList extends Component<Props,{}> {
           {this.props.items.map((item: ItemDesc, index: number) => {
             return (
               <ListItem className= 'list-item' button key={index} onClick={this.onClick}>
-                <p>sadasdas</p><ListItemText primary={item.name} onClick={this.onClick}/>
+                <ListItemText primary={item.name} onClick={this.onClick}/>
               </ListItem>
             );
           })}
