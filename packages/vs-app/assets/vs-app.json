@@ -215,6 +215,66 @@
         ]
       },
       {
+        "name": "slot_camera",
+        "position": {
+          "x": 2.8,
+          "y": 2.4,
+          "z": 10.71
+        },
+        "rotation": {
+          "x": 0,
+          "y": -22,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "components": [
+          {
+            "type": "mp.gltfLoader",
+            "inputs": {
+              "url": "https://static.matterport.com/showcase-sdk/examples/assets-1.0-2-g6b74572/assets/models/camera-1/scene.gltf",
+              "localScale": { "x": 0.0008, "y": 0.0008, "z": 0.0008 },
+              "localRotation": { "x": 0, "y": 90, "z": 0 }
+            },
+            "events": {
+              "INTERACTION.CLICK": false,
+              "INTERACTION.HOVER": false,
+              "INTERACTION.DRAG": false
+            }
+          },
+          {
+            "type": "mp.securityCamera",
+            "inputs": {
+              "nearPlane": 0.1,
+              "farPlane": 10,
+              "horizontalFOV": 52,
+              "aspect": 1.7777777777777777,
+              "localPosition": {
+                "x": 0,
+                "y": 0.18,
+                "z": -0.3
+              },
+              "localRotation": {
+                "x": -15,
+                "y": 0,
+                "z": 0
+              },
+              "color": 65280,
+              "panPeriod": 5,
+              "panAngle": -45
+            },
+            "events": {
+              "INTERACTION.CLICK": false,
+              "INTERACTION.HOVER": false,
+              "INTERACTION.DRAG": false
+            }
+          }
+        ]
+      },
+      {
         "name": "slot_5",
         "position": { "x": -6.1, "y": 2.5, "z": 7.5},
         "rotation": { "x": 0, "y": 0,"z": 0 },

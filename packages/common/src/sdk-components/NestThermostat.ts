@@ -1,5 +1,5 @@
 import { SceneComponent, ComponentOutput } from '../SceneComponent';
-import { Object3D, AnimationMixer, AnimationAction, LoopOnce, AnimationClip, Mesh, Texture, MeshLambertMaterial } from 'three';
+import { Object3D, Mesh, Texture, MeshLambertMaterial } from 'three';
 import { IPainter2d } from './CanvasRenderer';
 import { PlaneRenderer, Size } from './PlaneRenderer';
 
@@ -21,13 +21,8 @@ type Outputs = {
 
 class NestThermostat extends SceneComponent implements IPainter2d {
   private daeComponent: SceneComponent;
-  private mixer: AnimationMixer | null = null;
-  private onEnterClip: AnimationClip | null = null;
   private mesh: Mesh | null = null;
-  private currentTime: number = 0;
-  private nextUpdate: number = 0;
-  private temperature: number = 0;
-  private tempChangeRange: number = 5;
+  private temperature: number = 21;
 
   inputs: Inputs = {
     loadingState: 'Idle',
@@ -47,7 +42,6 @@ class NestThermostat extends SceneComponent implements IPainter2d {
 
   onInit() {
     const root = this.context.root;
-    const THREE = this.context.three;
 
     let planeRenderer: PlaneRenderer;
     for (const component of root.componentIterator()) {
@@ -64,15 +58,6 @@ class NestThermostat extends SceneComponent implements IPainter2d {
 
 
     this.outputs.painter = this;
-
-    this.mixer = new THREE.AnimationMixer(planeRenderer.outputs.objectRoot);
-
-    const tm = 0.2;
-    const positionTrack = new THREE.VectorKeyframeTrack('.scale', [0, tm], [
-      0, 0, 0,
-      0.5, 0.5, 0.5
-    ], THREE.InterpolateSmooth);
-    this.onEnterClip = new THREE.AnimationClip(null, tm, [positionTrack]);
   }
 
   onInputsUpdated() {
@@ -100,12 +85,16 @@ class NestThermostat extends SceneComponent implements IPainter2d {
     if (eventType === HoverEvent) {
       const data: any = eventData;
       if (data.hover) {
+        /*
         this.outputs.visible = true;
         const onEnterAction: AnimationAction = this.mixer.clipAction(this.onEnterClip);
         onEnterAction.stop();
         onEnterAction.loop = LoopOnce;
         onEnterAction.clampWhenFinished = true;
         onEnterAction.play();
+        */
+        this.temperature = Number(prompt("Set Room the temperature"));
+        this.notify(RepaintEvent);
       }
       else {
         this.outputs.visible = false;
@@ -140,6 +129,7 @@ class NestThermostat extends SceneComponent implements IPainter2d {
   }
 
   onTick(delta: number) {
+    /*
     this.currentTime += delta;
 
     if (this.mixer) {
@@ -162,7 +152,8 @@ class NestThermostat extends SceneComponent implements IPainter2d {
       }
 
       this.notify(RepaintEvent);
-    }
+    } 
+    */
   }
 }
 
